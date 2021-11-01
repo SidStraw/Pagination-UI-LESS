@@ -1,0 +1,33 @@
+{
+  "name": "pagination-ui-less",
+  "version": "0.1.0",
+  "description": "A Pagination manager library without UI.",
+  "main": "dist/index.js",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "keywords": [
+    "pagination",
+    "ui-less"
+  ],
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "repository": {
+    "url": "SidStraw/Pagination-UI-LESS",
+    "type": "git"
+  },
+  "author": {
+    "email": "sid@sid.tw",
+    "name": "SidStraw",
+    "url": "https://sid.tw"
+  },
+  "license" : "MIT license",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
