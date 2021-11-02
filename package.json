@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A Pagination manager library without UI.",
   "main": "dist/index.js",
+  "source": "src/index.ts",
   "files": [
     "src",
     "dist"
@@ -12,7 +13,8 @@
     "ui-less"
   ],
   "scripts": {
-    "tsc": "tsc"
+    "dev": "tsc --watch",
+    "build": "microbundle"
   },
   "repository": {
     "url": "SidStraw/Pagination-UI-LESS",
@@ -23,8 +25,9 @@
     "name": "SidStraw",
     "url": "https://sid.tw"
   },
-  "license" : "MIT license",
+  "license": "MIT",
   "devDependencies": {
+    "microbundle": "^0.14.1",
     "typescript": "^4.4.4"
   },
   "publishConfig": {
