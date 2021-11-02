@@ -1,6 +1,6 @@
 {
   "name": "pagination-ui-less",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Pagination manager library without UI.",
   "source": "src/index.ts",
   "main": "dist/index.umd.js",
