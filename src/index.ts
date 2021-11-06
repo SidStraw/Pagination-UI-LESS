@@ -1,10 +1,10 @@
-type TCreatePaginationProps = {
+export type TCreatePaginationProps = {
   pagesLength: number
-  currentPage: number
   onChange: (pages: TPages) => void
+  currentPage?: number
 }
 
-type TPages = {
+export type TPages = {
   currentPage: number
   pages: {
     action: string | null
