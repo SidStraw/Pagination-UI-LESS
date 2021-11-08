@@ -1,4 +1,4 @@
-import { renderFunction, createCard, createPaginationItem } from './module/createElements.js'
+import { createCard, createPaginationItem } from './module/createElements.js'
 
 async function main() {
   const PAGE_ITEM_QUANTITY = 10
@@ -7,9 +7,6 @@ async function main() {
 
   const infoElement = document.querySelector('#info')
   const paginationElement = document.querySelector('#pagination')
-
-  const updateInfoCard = renderFunction(infoElement, createCard)
-  const updatePagination = renderFunction(paginationElement, createPaginationItem)
 
   const pagesLength =
     CarParks.length % PAGE_ITEM_QUANTITY === 0
@@ -23,8 +20,10 @@ async function main() {
 
   function updateElements({ currentPage, pages }) {
     const currentIndex = (currentPage - 1) * PAGE_ITEM_QUANTITY
-    updateInfoCard(CarParks.slice(currentIndex, currentIndex + PAGE_ITEM_QUANTITY))
-    updatePagination(pages)
+    const currentDara = CarParks.slice(currentIndex, currentIndex + PAGE_ITEM_QUANTITY)
+
+    infoElement.innerHTML = currentDara.map(createCard).join('')
+    paginationElement.innerHTML = pages.map(createPaginationItem).join('')
   }
 
   paginationElement.addEventListener('click', e => {
@@ -34,14 +33,7 @@ async function main() {
 
     if (!action || currentPage === newPage) return
 
-    const { currentPage: newCurrentPage } = pagination[action](newPage)
-
-    history.pushState({ page: newCurrentPage }, '', '?page=' + newCurrentPage)
-  })
-
-  window.addEventListener('popstate', ({ state }) => {
-    const { page = 1 } = state || {}
-    updateElements(pagination.setPage(page))
+    pagination[action](newPage)
   })
 
   const url = new URL(window.location.href)
