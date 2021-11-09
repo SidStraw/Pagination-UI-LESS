@@ -7,8 +7,8 @@
   "module": "dist/index.modern.module.js",
   "types": "dist/index.d.ts",
   "files": [
-    "src",
-    "dist"
+    "dist",
+    "README.md"
   ],
   "keywords": [
     "pagination",
